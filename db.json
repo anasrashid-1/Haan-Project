@@ -53,7 +53,7 @@
         {
             "id" : 6,
             "img" : "https://cdn.shopify.com/s/files/1/0511/9066/1293/products/082.jpg?v=1651510073",
-            "name" : "Hydrating Hand Sanitizer - Blossom Elixir 3 Pack",
+            "name" : "Hydrating Hand Sanitizer - 3 Pack",
             "discounted_price" : 1350,
             "price" : 1590,
             "pack" : 3,
@@ -95,7 +95,7 @@
         {
             "id" : 10,
             "img" : "https://cdn.shopify.com/s/files/1/0511/9066/1293/products/25.jpg?v=1651510085",
-            "name" : "Hydrating Hand Sanitizer & Refill Pack - Soothing Lavender",
+            "name" : "Hydrating Hand Sanitizer & Refill Pack",
             "discounted_price" : 1180,
             "price" : 1990,
             "pack" : 2,
@@ -106,7 +106,7 @@
         {
             "id" : 11,
             "img" : "https://cdn.shopify.com/s/files/1/0511/9066/1293/products/053_1.jpg?v=1651510188",
-            "name" : "Hydrating Hand Sanitizer & Lanyard Pack - Soothing Lavender",
+            "name" : "Hydrating Hand Sanitizer & Lanyard Pack",
             "discounted_price" : 960,
             "price" : 980,
             "pack" : 1,
@@ -143,12 +143,12 @@
             "price" : 1490,
             "pack" : 1,
             "description" : "Do you want to get over 1200 sprays of your Purifying Verbena hand sanitizer? Get this Refill pouch now and enjoy clean and moisturized hands for a lifetime. Best part? By getting this Refill you reduce 89% of the amount of plastic used to create a HAAN Pocket.",
-            "category" : "case"
+            "category" : "sanitizer"
         },
         {
             "id" : 15,
             "img" : "https://cdn.shopify.com/s/files/1/0511/9066/1293/products/27.jpg?v=1651510117",
-            "name" : "Hydrating Hand Sanitizer & Refill Pack - Purifying Verbena",
+            "name" : "Hydrating Hand Sanitizer & Refill Pack",
             "discounted_price" : 1180,
             "price" : 1990,
             "pack" : 2,
@@ -158,7 +158,7 @@
         {
             "id" : 16,
             "img" : "https://cdn.shopify.com/s/files/1/0511/9066/1293/products/040_b5684c5d-88b7-474b-aa10-8a466500b765.jpg?v=1678812712",
-            "name" : "Hydrating Hand Sanitizer & Lanyard Pack - Purifying Verbena",
+            "name" : "Lanyard Pack",
             "discounted_price" : 780,
             "price" : 990,
             "pack" : 1,
@@ -183,7 +183,7 @@
             "price" : 590,
             "pack" : 1,
             "description" : "Treat yourself to our relaxing Healing Chrysants scent. An easy-to-carry everyday essential, packed with natural ingredients to cleanse, hydrate and refresh your hands. Let flowers take care of you!",
-            "category" : "case"
+            "category" : "sanitizer"
         },
         {
             "id" : 19,
@@ -198,7 +198,7 @@
         {
             "id" : 20,
             "img" : "https://cdn.shopify.com/s/files/1/0511/9066/1293/products/29.jpg?v=1651510101",
-            "name" : "Hydrating Hand Sanitizer & Refill Pack - Healing Chrysants",
+            "name" : "Hydrating Hand Sanitizer & Refill Pack",
             "discounted_price" : 1180,
             "price" : 1990,
             "pack" : 2,
@@ -208,7 +208,7 @@
         {
             "id" : 21,
             "img" : "https://cdn.shopify.com/s/files/1/0511/9066/1293/products/050.jpg?v=1651510180",
-            "name" :"Hydrating Hand Sanitizer & Lanyard Pack - Healing Chrysants" ,
+            "name" :"Hydrating Hand Sanitizer & Lanyard Pack" ,
             "discounted_price" : 880,
             "price" : 990,
             "pack" : 1,

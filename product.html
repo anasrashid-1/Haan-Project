@@ -17,7 +17,7 @@
                 <img src="https://www.alancrew.com/wp-content/uploads/2019/05/Haan-by-Alancrew2-1.jpg" alt="">
             </div>
             <div id="ans-sl">
-                <h4>Lift Up your Journeys: Natural essentials for your daily adventures</h4>
+                <h4 >Lift Up your Journeys: Natural essentials for your daily adventures</h4>
             </div>
         </div>
 
@@ -41,52 +41,47 @@
                         <p>Category</p>
                         <input type="checkbox" value="handsanitizer" id="c-handsanitizer">
                         <label for="c-handsanitizer">Hand Sanitizer</label>
-
-                    </div>
-                    <div class="ans-filter-div-product">
-                        <!-- 3 -->
-                        <p>Product</p>
-                        <input type="checkbox" value="3-pack" id="p-3pack">
-                        <label for="p-3pack">3 Pack</label>
                         <br>
                         <br>
-                        <!-- 5 -->
-
-                        <input type="checkbox" value="5-pack" id="p-5pack">
-                        <label for="p-5pack">5 Pack</label>
+                        <input type="checkbox" value="case" id="c-case">
+                        <label for="c-case">Case</label>
                         <br>
                         <br>
-                        <!-- combo -->
                         <input type="checkbox" value="combo" id="p-combo">
                         <label for="p-combo">Combo</label>
+
                     </div>
-                    <div class="ans-sort-div-fragrance">
+             
+                    <!-- <div class="ans-sort-div-fragrance">
                         <p>Fragrance</p>
-                        <!-- Wood Night -->
+                       
                         <input type="checkbox" value="woodnight" id="woodnight">
                         <label for="woodnight">Wood Night</label>
                         <br>
                         <br>
 
-                        <!-- Bright Rose -->
+                       
                         <input type="checkbox" value="brightrose" id="brightrose">
                         <label for="brightrose">Bright Rose</label>
                         <br>
                         <br>
 
-                        <!-- Citrus Noon -->
+                       
                         <input type="checkbox" value="citrusnoon" id="citrusnoon">
                         <label for="citrusnoon">Citrus Noon</label>
                         <br>
                         <br>
-                    </div>
+                    </div> -->
+                    
                     <div class="ans-sort-div-price">
                         <p>Price</p>
-                        <input style="height: 30px;" type="number" id="product-price" placeholder="Enter Price">
+                        <input style="height: 30px;" type="number" id="product-price" placeholder="Enter Minimum Price">
                     </div>
                 </div>
+                <br>
+                    <br>
                 <div id="ans-filter-div-btn">
-                    <button class="ans-btn">Apply</button>
+                    <button id="ans-filter-btn" class="ans-btn">Apply</button>
                 </div>
                 <br>
                 <hr>
@@ -99,12 +94,12 @@
                     <div id="ans-sort-div-price">
                         <p>Price</p>
                         <input type="checkbox" value="ascending" id="p-ascending">
-                        <label for="p-ascending">Price Descending</label>
+                        <label id="p-ascending-text" for="p-ascending">Price Ascending</label>
                         <br>
                         <br>
 
-                        <input type="checkbox" value="ascending" id="p-descending">
-                        <label for="p-ascending">Price Ascending</label>
+                        <input type="checkbox" value="descending" id="p-descending">
+                        <label id="p-descending-text" for="p-ascending">Price Desscending</label>
                         <br>
                         <br>
 
@@ -112,17 +107,17 @@
                     <div id="ans-sort-div-title">
                         <p>Title</p>
                         <input type="checkbox" value="a-z" id="a-z">
-                        <label for="a-z">A-Z</label>
+                        <label id="a-z-text" for="a-z">A-Z</label>
                         <br>
                         <br>
 
                         <input type="checkbox" value="z-a" id="z-a">
-                        <label for="z-a">Z-A</label>
+                        <label id="z-a-text" for="z-a">Z-A</label>
 
                     </div>
                 </div>
                 <div id="ans-sort-div-btn">
-                    <button class="ans-btn">Apply</button>
+                    <button id="ans-sort-btn" class="ans-btn">Apply</button>
                 </div>
                 <br>
                 <hr>
@@ -151,127 +146,6 @@
     </div>
 
 </body>
-<script>
-
-    let filterText = document.getElementById("ans-filter-text");
-    filterText.addEventListener("click", function () {
-        let filterDiv = document.getElementById("ans-filter-div");
-        let computedStyle = window.getComputedStyle(filterDiv);
-
-        if (computedStyle.display === "none") {
-            filterDiv.style.display = "block";
-        } else {
-            filterDiv.style.display = "none";
-        }
-    });
-
-    let sortText = document.getElementById("ans-sort-text");
-    sortText.addEventListener("click", function () {
-        let sortDiv = document.getElementById("ans-sort-div");
-        let computedStyle = window.getComputedStyle(sortDiv);
-        if (computedStyle.display === "none") {
-            sortDiv.style.display = "block";
-        } else {
-            sortDiv.style.display = "none";
-        }
-    });
-
-    // -----------------------------------------------------------------------------------------
-
-    let totalPages = null;
-    let pageLimit = 12;
-    let pageNumber = 1
-    const fetchProducts = async (pageNum) => {
-        try {
-            let res = await fetch(`http://localhost:3000/products?_limit=${pageLimit}&_page=${pageNum}`);
-            let data = await res.json();
-            console.log(data)
-            // let totalItems = data.length;
-            let totalItems = res.headers.get("X-Total-Count")
-            console.log("total items : " + totalItems)
-            totalPages = Math.ceil(totalItems / pageLimit)
-            console.log("total-pages : " + totalPages)
-            // console.log(totalItems);
-            displayData(data);
-        } catch (error) {
-            console.log(error)
-        }
-    }
-    fetchProducts(pageNumber)
-
-
-    let pageNumberText = document.getElementById("ans-page-num");
-    pageNumberText.textContent = pageNumber;
-    let prevBtn = document.getElementById("ans-previous-btn");
-    prevBtn.disabled = true;
-
-    let nextBtn = document.getElementById("ans-next-btn");
-    nextBtn.addEventListener("click", function(){
-        pageNumber++;
-        prevBtn.disabled = false;
-        if(pageNumber === totalPages){
-            nextBtn.disabled = true;
-        }
-        pageNumberText.textContent = pageNumber;
-        window.location.href = "#ans-main-product-container";
-        fetchProducts(pageNumber)
-    });
-    
-    prevBtn.addEventListener("click", function(){
-        pageNumber--;
-        nextBtn.disabled = false;
-        if(pageNumber === 1){
-            prevBtn.disabled = true;
-        }
-        pageNumberText.textContent = pageNumber;
-        window.location.href = "#ans-main-product-container";
-        fetchProducts(pageNumber)
-    })
-
-
-
-
-    const displayData = (data) => {
-        let pMainContainer = document.getElementById("ans-main-product-container");
-        pMainContainer.innerHTML = null;
-
-        let productsList = document.createElement("div");
-        productsList.setAttribute("class", "ans-product-list");
-
-        data.forEach((element) => {
-            let productCard = document.createElement("div");
-            productCard.setAttribute("class", "ans-product-card");
-            let productImg = document.createElement("div");
-            productImg.setAttribute("class", "prodct-img-cont")
-            let img = document.createElement("img");
-
-            let productBody = document.createElement("div");
-            productBody.setAttribute("class", "prodct-body")
-            let h3 = document.createElement("h3");
-            h3.setAttribute("class", "product-name")
-            let dp = document.createElement("p");
-            let op = document.createElement("p");
-            let cardBtn = document.createElement("button");
-            cardBtn.setAttribute("class", "ans-btn")
-            cardBtn.textContent = "Add to Cart";
-
-            img.src = element.img;
-            h3.textContent = element.name;
-            dp.textContent = "₹" + element.discounted_price;
-            op.textContent = "₹" + element.price;
-            op.setAttribute("id", "p-or-price")
-            productImg.append(img);
-            productBody.append(h3, dp, op, cardBtn);
-            productCard.append(productImg, productBody);
-            productsList.append(productCard);
-        });
-
-        pMainContainer.append(productsList);
-    };
-
-
-
-
-</script>
+<script src="product.js"></script>
 
 </html>
