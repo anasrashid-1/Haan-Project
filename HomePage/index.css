@@ -15,8 +15,6 @@ section{
     background: url("https://cdn.shopify.com/s/files/1/0511/9066/1293/files/QWert_d1513456-152b-4cc5-a407-4c4cf1c6e087.png?v=1684768627");
     background-repeat: no-repeat;
     background-size: 1550px 750px;
- 
-   
 
 }
 
@@ -75,22 +73,7 @@ color: white;
 
 }
 
-/* .imgBox{
-    position: sticky;
-} */
 
-
-/* 
-.swiper-container{
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-
+@media screen and (max-width:767px) {
+    
 }
-
-.swiper-slide{
-background-position: center;
-background-size: cover;
-width: 300px;
-height: 300px;
-} */
