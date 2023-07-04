@@ -1,5 +1,5 @@
 *{
-    border: 1px solid lightgray;
+    border: 1px solid grey;
     padding: 7px 13px 7px 13px;
 }
 body{
@@ -14,7 +14,7 @@ body{
 #menuimg{
     width: 20px;
     border: none;
-    /* border-right: 1px solid lightgray; */
+    /* border-right: 1px solid grey; */
     padding: none;
 }
 
@@ -47,18 +47,27 @@ body{
 #box2{
     display: flex;
     padding: 0px;
+    border: none;
+    padding: none;
+    /* border-bottom: 1px solid grey; */
+    margin-bottom: 20px;
 }
 
 #box2>div{
-    /* border: none; */
+    border: none;
+    padding: none;
 }
 
 #box2>div:nth-child(1){
-    width: 51%;
+    width: 53.9%;
+    margin-top: -15px;
+    border-bottom: 0px;
 }
 
 #box2>div:nth-child(2){
-    width: 44%;
+    width: 48%;
+    margin-top: -15px;
+    margin-left: -28px;
 }
 
 #box2>div>div>h1{
@@ -71,4 +80,44 @@ body{
     margin: 0px;
     padding: none;
     margin-top: 20px;
+}
+
+#div1{
+    height: 350px;
+    padding-left: 30%;
+    padding-top: 10%;
+}
+
+#div2{
+    height: 350px;
+}
+
+#div3{
+    display: flex;
+    justify-content: space-between;
+}
+
+#div3>h3{
+    border: none;
+}
+
+#box3{
+    display: flex;
+    border: none;
+    margin-top: -35px;
+}
+
+#box3>div:nth-child(1){
+    width: 59.7%;
+    height: 30px;
+}
+
+#box3>div:nth-child(2){
+    width: 12%;
+    height: 30px;
+}
+
+#box3>div:nth-child(3){
+    width: 38%;
+    height: 30px;
 }
