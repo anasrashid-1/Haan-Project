@@ -289,6 +289,7 @@
             let cardBtn = document.createElement("button");
             cardBtn.setAttribute("class", "ans-btn")
             cardBtn.textContent = "Add to Cart";
+         
 
             img.src = element.img;
             h3.textContent = element.name;
@@ -299,6 +300,18 @@
             productBody.append(h3, dp, op, cardBtn);
             productCard.append(productImg, productBody);
             productsList.append(productCard);
+
+            h3.style.cursor = "pointer"
+            h3.addEventListener("click", function(){
+                localStorage.setItem("product-det", JSON.stringify(element))
+                window.location.href = "product-description.html"
+            })
+
+            img.style.cursor = "pointer"
+            img.addEventListener("click", function(){
+                localStorage.setItem("product-det", JSON.stringify(element))
+                window.location.href = "product-description.html"
+            })
         });
 
         pMainContainer.append(productsList);

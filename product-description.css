@@ -1,0 +1,51 @@
+#ans-p-img{
+    width: 90%;
+    height: 90%;
+}
+#ans-p-content{
+    display: grid;
+    grid-template-columns: 44% 44%;
+    justify-content: center;
+    gap: 5%;
+}
+#ans-p-des{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+#inc-dec-btns{
+    height: auto;
+    display: flex;
+}
+#ans-product-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#p-des-img-cont{
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+}
+#ans-p-des h4{
+    padding: 0;
+    margin: 8px;
+}
+#ans-product-price{
+    text-decoration: line-through;
+    color: lightgrey;
+}
+#ans-cart-button{
+    border: none;
+    color: white;
+    background-color: lightgreen;
+    width: 380%;
+    height: 34px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+#ans-cart-button:hover{
+    background-color:rgb(99,89,148);
+}
