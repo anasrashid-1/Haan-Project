@@ -37,7 +37,14 @@
         </div>
 
         <div id="p-des-img-cont">
-            <img style="width: 40%;" src="pdes.png" alt="">
+            <img style="width: 40%; " src="pdes.png" alt="">
+        </div>
+            <hr>
+        <div>
+            <h3 style="text-align: center;">You may also like</h3>
+        </div>
+        <div id="similar-products-cont">
+
         </div>
     </div>
 </body>
@@ -60,6 +67,92 @@
         localStorage.setItem("card-product-db", JSON.stringify(lsArr));
     })
     cardBtn.style.cursor = "pointer";
+    
+
+
+    // similar products
+
+
+
+    const displayData = (data) => {
+        let pMainContainer = document.getElementById("similar-products-cont");
+        pMainContainer.innerHTML = null;
+
+        let productsList = document.createElement("div");
+        productsList.setAttribute("class", "ans-product-list");
+
+        let count = 0
+        data.forEach((element) => {
+            if(count < 4){
+                let productCard = document.createElement("div");
+            productCard.setAttribute("class", "ans-product-card");
+            let productImg = document.createElement("div");
+            productImg.setAttribute("class", "prodct-img-cont")
+            let img = document.createElement("img");
+
+            let productBody = document.createElement("div");
+            productBody.setAttribute("class", "prodct-body")
+            let h3 = document.createElement("h3");
+            h3.setAttribute("class", "product-name")
+            let dp = document.createElement("p");
+            let op = document.createElement("p");
+            let cardBtn = document.createElement("button");
+            cardBtn.setAttribute("class", "ans-btn")
+            cardBtn.textContent = "Add to Cart";
+         
+
+            img.src = element.img;
+            h3.textContent = element.name;
+            dp.textContent = "₹" + element.discounted_price;
+            op.textContent = "₹" + element.price;
+            op.setAttribute("id", "p-or-price")
+            productImg.append(img);
+            productBody.append(h3, dp, op, cardBtn);
+            productCard.append(productImg, productBody);
+            productsList.append(productCard);
+
+            h3.style.cursor = "pointer"
+            h3.addEventListener("click", function(){
+                localStorage.setItem("product-det", JSON.stringify(element))
+                window.location.href = "product-description.html"
+                
+                let filteredSimilarProducts = fetchedData.filter((el) => {
+                    return el.category === element.category && el.pack === element.pack
+                })
+                localStorage.setItem("similar-products-db", JSON.stringify(filteredSimilarProducts))
+            })
+
+            img.style.cursor = "pointer"
+            img.addEventListener("click", function(){
+                localStorage.setItem("product-det", JSON.stringify(element))
+                window.location.href = "product-description.html"
+
+                let filteredSimilarProducts = fetchedData.filter((el) => {
+                    return el.category === element.category && el.pack === element.pack
+                })
+                localStorage.setItem("similar-products-db", JSON.stringify(filteredSimilarProducts))
+            })
+
+
+            cardBtn.addEventListener("click", function(){
+                lsArr.push(element);
+                localStorage.setItem("card-product-db", JSON.stringify(lsArr));
+            })
+            cardBtn.style.cursor = "pointer";
+
+            count++;
+            } //---- else e
+            else{
+                return;
+            }
+        });
+
+        pMainContainer.append(productsList);
+    };
+
+    let similarProducts = JSON.parse(localStorage.getItem("similar-products-db"));
+    console.log(similarProducts)
+    displayData(similarProducts)
 
 </script>
 

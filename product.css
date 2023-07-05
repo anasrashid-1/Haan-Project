@@ -75,6 +75,11 @@
 .ans-product-list img {
     width: 100%;
 }
+    
+#loading-img-cont{
+    display: flex;
+    justify-content: center;
+}
 
 .ans-product-list {
     display: grid;
@@ -152,5 +157,9 @@
     #ans-sort-div-content {
         flex-direction: column;
         margin-left: 28px;
+    }
+
+    #ans-filter-text, #ans-sort-text{
+        font-size: 18px;
     }
 }
