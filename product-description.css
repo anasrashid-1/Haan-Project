@@ -29,6 +29,10 @@
     justify-content: center;
     margin-top: -20px;
 }
+#ans-p-img-cont{
+    display: flex;
+    justify-content: center;
+}
 #ans-p-des h4{
     padding: 0;
     margin: 8px;
@@ -41,11 +45,27 @@
     border: none;
     color: white;
     background-color: lightgreen;
-    width: 380%;
+    width: 350px;
     height: 34px;
     border-radius: 15px;
     cursor: pointer;
+    margin-top: 20px;
 }
 #ans-cart-button:hover{
     background-color:rgb(99,89,148);
+}
+
+@media screen and (max-width: 799px){
+    #ans-p-content{
+       grid-template-columns: 95%;
+       align-items: center;
+    }
+    #p-des-img-cont{
+       
+        margin-top: 50px;
+    }
+    #ans-cart-button-container{
+        display: flex;
+        justify-content: center;
+    } 
 }

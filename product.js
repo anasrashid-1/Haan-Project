@@ -265,7 +265,7 @@
 
 
 
-
+    let lsArr = JSON.parse(localStorage.getItem("card-product-db")) || [];
     const displayData = (data) => {
         let pMainContainer = document.getElementById("ans-main-product-container");
         pMainContainer.innerHTML = null;
@@ -312,6 +312,13 @@
                 localStorage.setItem("product-det", JSON.stringify(element))
                 window.location.href = "product-description.html"
             })
+
+
+            cardBtn.addEventListener("click", function(){
+                lsArr.push(element);
+                localStorage.setItem("card-product-db", JSON.stringify(lsArr));
+            })
+            cardBtn.style.cursor = "pointer";
         });
 
         pMainContainer.append(productsList);
