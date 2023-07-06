@@ -319,12 +319,29 @@ const displayData = (data) => {
                 "similar-products-db",
                 JSON.stringify(filteredSimilarProducts)
             );
+
         });
 
+ 
         cardBtn.addEventListener("click", function () {
-            lsArr.push(element);
-            localStorage.setItem("card-product-db", JSON.stringify(lsArr));
+            let isProductAlreadyPresent = false;
+            if (lsArr.length > 0) {
+                lsArr.forEach((item) => {
+                    if (item.id === element.id) {
+                        isProductAlreadyPresent = true;
+                        return; 
+                    }
+                });
+            }
+            if (isProductAlreadyPresent) {
+                alert("Product is already present in the cart.");
+            } else {
+                lsArr.push(element);
+                localStorage.setItem("card-product-db", JSON.stringify(lsArr));
+                alert("Product added to cart successfully.");
+            }
         });
+        
         cardBtn.style.cursor = "pointer";
     });
 
