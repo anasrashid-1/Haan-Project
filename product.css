@@ -38,12 +38,18 @@
 
 .ans-btn {
     border: none;
-    background-color: white;
-    color: Black;
-    border: 1px solid black;
+    background-color: teal;
+    color: white;
+    /* border: 1px solid black; */
     padding: 5px 50px;
     border-radius: 15px;
     cursor: pointer;
+}
+.ans-btn:hover {
+    /* background-color: black;
+    color: white; */
+    background: rgb(0,0,0);
+    background: linear-gradient(197deg, rgba(0,0,0,1) 36%, rgba(0,128,128,1) 67%);
 }
 .text-icon-cont{
     display: flex;
@@ -54,10 +60,11 @@
 .ion-icon{
     font-size: 20px;
 }
-.ans-btn:hover {
-    background-color: black;
-    color: white;
+.ion-icon :hover{
+    color: red;
 }
+
+
 
 .ans-btn:disabled {
     opacity: 0.5;
@@ -140,8 +147,8 @@
     font-size: 28px;
     cursor: pointer;
 }
-#ion-icon :hover{
-    background-color: black;
+#ion-icon:hover{
+   color: red;
 }
 #ans-pagination-btns {
     display: flex;

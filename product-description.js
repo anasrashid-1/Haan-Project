@@ -10,7 +10,7 @@
 
 
     let wlArr = JSON.parse(localStorage.getItem("cart-wish-db")) || [];
-    let lsArr = JSON.parse(localStorage.getItem("card-product-db")) || [];
+    let lsArr = JSON.parse(localStorage.getItem("cartItems")) || [];
     let cardBtn = document.getElementById("ans-cart-button")
     cardBtn.addEventListener("click", function () {
             let isProductAlreadyPresent = false;
@@ -26,7 +26,7 @@
                 alert("Product is already present in the cart.");
             } else {
                 lsArr.push(productDetails);
-                localStorage.setItem("card-product-db", JSON.stringify(lsArr));
+                localStorage.setItem("cartItems", JSON.stringify(lsArr));
                 alert("Product added to cart successfully.");
             }
         });
@@ -60,7 +60,7 @@
                 wish_cart_cont.setAttribute("class", "wish_cart_cont")
                 // wish_cart_cont.innerHTML = `<ion-icon id="ion-icon" name="heart-outline"></ion-icon>`
                 let ion_icon = document.createElement("ion-icon")
-                ion_icon.setAttribute("name", "heart-outline")
+                ion_icon.setAttribute("name", "heart")
                 ion_icon.setAttribute("id", "ion-icon")
                 let cardBtn = document.createElement("button");
                 cardBtn.setAttribute("class", "ans-btn");
@@ -133,7 +133,7 @@
                         alert("Product is already present in the cart.");
                     } else {
                         lsArr.push(element);
-                        localStorage.setItem("card-product-db", JSON.stringify(lsArr));
+                        localStorage.setItem("cartItems", JSON.stringify(lsArr));
                         alert("Product added to cart successfully.");
                     }
                 });

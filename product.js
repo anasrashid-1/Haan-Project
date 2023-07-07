@@ -260,7 +260,7 @@ prevBtn.addEventListener("click", function () {
     fetchProducts(pageNumber);
 });
 
-let lsArr = JSON.parse(localStorage.getItem("card-product-db")) || [];
+let lsArr = JSON.parse(localStorage.getItem("cartItems")) || [];
 let wlArr = JSON.parse(localStorage.getItem("cart-wish-db")) || [];
 const displayData = (data) => {
     let pMainContainer = document.getElementById("ans-main-product-container");
@@ -287,7 +287,7 @@ const displayData = (data) => {
         wish_cart_cont.setAttribute("class", "wish_cart_cont")
         // wish_cart_cont.innerHTML = `<ion-icon id="ion-icon" name="heart-outline"></ion-icon>`
         let ion_icon = document.createElement("ion-icon")
-        ion_icon.setAttribute("name", "heart-outline")
+        ion_icon.setAttribute("name", "heart")
         ion_icon.setAttribute("id", "ion-icon")
         let cardBtn = document.createElement("button");
         cardBtn.setAttribute("class", "ans-btn");
@@ -368,7 +368,7 @@ const displayData = (data) => {
                 alert("Product is already present in the cart.");
             } else {
                 lsArr.push(element);
-                localStorage.setItem("card-product-db", JSON.stringify(lsArr));
+                localStorage.setItem("cartItems", JSON.stringify(lsArr));
                 alert("Product added to cart successfully.");
             }
         });
