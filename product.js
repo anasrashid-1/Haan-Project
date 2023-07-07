@@ -1,4 +1,5 @@
-let filterText = document.getElementById("ans-filter-text");
+let filterText = document.getElementById("ans-filter");
+filterText.style.cursor = "pointer"
 filterText.addEventListener("click", function () {
     let filterDiv = document.getElementById("ans-filter-div");
     let computedStyle = window.getComputedStyle(filterDiv);
@@ -10,7 +11,8 @@ filterText.addEventListener("click", function () {
     }
 });
 
-let sortText = document.getElementById("ans-sort-text");
+let sortText = document.getElementById("ans-sort");
+sortText.style.cursor = "pointer"
 sortText.addEventListener("click", function () {
     let sortDiv = document.getElementById("ans-sort-div");
     let computedStyle = window.getComputedStyle(sortDiv);
@@ -259,6 +261,7 @@ prevBtn.addEventListener("click", function () {
 });
 
 let lsArr = JSON.parse(localStorage.getItem("card-product-db")) || [];
+let wlArr = JSON.parse(localStorage.getItem("cart-wish-db")) || [];
 const displayData = (data) => {
     let pMainContainer = document.getElementById("ans-main-product-container");
     pMainContainer.innerHTML = null;
@@ -279,8 +282,16 @@ const displayData = (data) => {
         h3.setAttribute("class", "product-name");
         let dp = document.createElement("p");
         let op = document.createElement("p");
+
+        let wish_cart_cont = document.createElement("div")
+        wish_cart_cont.setAttribute("class", "wish_cart_cont")
+        // wish_cart_cont.innerHTML = `<ion-icon id="ion-icon" name="heart-outline"></ion-icon>`
+        let ion_icon = document.createElement("ion-icon")
+        ion_icon.setAttribute("name", "heart-outline")
+        ion_icon.setAttribute("id", "ion-icon")
         let cardBtn = document.createElement("button");
         cardBtn.setAttribute("class", "ans-btn");
+        
         cardBtn.textContent = "Add to Cart";
 
         img.src = element.img;
@@ -289,7 +300,8 @@ const displayData = (data) => {
         op.textContent = "₹" + element.price;
         op.setAttribute("id", "p-or-price");
         productImg.append(img);
-        productBody.append(h3, dp, op, cardBtn);
+        wish_cart_cont.append( ion_icon ,cardBtn)
+        productBody.append(h3, dp, op, wish_cart_cont);
         productCard.append(productImg, productBody);
         productsList.append(productCard);
 
@@ -322,6 +334,25 @@ const displayData = (data) => {
 
         });
 
+        ion_icon.addEventListener("click", function(){
+            let isProductAlreadyPresent = false;
+            if (wlArr.length > 0) {
+                wlArr.forEach((item) => {
+                    if (item.id === element.id) {
+                        isProductAlreadyPresent = true;
+                        return; 
+                    }
+                });
+            }
+            if (isProductAlreadyPresent) {
+                alert("Product is already present in your wishlist.");
+            } else {
+                wlArr.push(element);
+                localStorage.setItem("cart-wish-db", JSON.stringify(wlArr));
+                alert("Product added to your wishlist.");
+            }
+        })
+
  
         cardBtn.addEventListener("click", function () {
             let isProductAlreadyPresent = false;
@@ -341,9 +372,7 @@ const displayData = (data) => {
                 alert("Product added to cart successfully.");
             }
         });
-        
         cardBtn.style.cursor = "pointer";
     });
-
     pMainContainer.append(productsList);
 };

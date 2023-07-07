@@ -9,7 +9,7 @@
     document.getElementById("ans-product-description").textContent = productDetails.description;
 
 
-
+    let wlArr = JSON.parse(localStorage.getItem("cart-wish-db")) || [];
     let lsArr = JSON.parse(localStorage.getItem("card-product-db")) || [];
     let cardBtn = document.getElementById("ans-cart-button")
     cardBtn.addEventListener("click", function () {
@@ -32,12 +32,7 @@
         });
     cardBtn.style.cursor = "pointer";
 
-
-
     // similar products
-
-
-
     const displayData = (data) => {
         let pMainContainer = document.getElementById("similar-products-cont");
         pMainContainer.innerHTML = null;
@@ -51,27 +46,35 @@
                 let productCard = document.createElement("div");
                 productCard.setAttribute("class", "ans-product-card");
                 let productImg = document.createElement("div");
-                productImg.setAttribute("class", "prodct-img-cont")
+                productImg.setAttribute("class", "prodct-img-cont");
                 let img = document.createElement("img");
-
+        
                 let productBody = document.createElement("div");
-                productBody.setAttribute("class", "prodct-body")
+                productBody.setAttribute("class", "prodct-body");
                 let h3 = document.createElement("h3");
-                h3.setAttribute("class", "product-name")
+                h3.setAttribute("class", "product-name");
                 let dp = document.createElement("p");
                 let op = document.createElement("p");
+        
+                let wish_cart_cont = document.createElement("div")
+                wish_cart_cont.setAttribute("class", "wish_cart_cont")
+                // wish_cart_cont.innerHTML = `<ion-icon id="ion-icon" name="heart-outline"></ion-icon>`
+                let ion_icon = document.createElement("ion-icon")
+                ion_icon.setAttribute("name", "heart-outline")
+                ion_icon.setAttribute("id", "ion-icon")
                 let cardBtn = document.createElement("button");
-                cardBtn.setAttribute("class", "ans-btn")
+                cardBtn.setAttribute("class", "ans-btn");
+                
                 cardBtn.textContent = "Add to Cart";
-
-
+        
                 img.src = element.img;
                 h3.textContent = element.name;
                 dp.textContent = "₹" + element.discounted_price;
                 op.textContent = "₹" + element.price;
-                op.setAttribute("id", "p-or-price")
+                op.setAttribute("id", "p-or-price");
                 productImg.append(img);
-                productBody.append(h3, dp, op, cardBtn);
+                wish_cart_cont.append( ion_icon ,cardBtn)
+                productBody.append(h3, dp, op, wish_cart_cont);
                 productCard.append(productImg, productBody);
                 productsList.append(productCard);
 
@@ -97,6 +100,24 @@
                     localStorage.setItem("similar-products-db", JSON.stringify(filteredSimilarProducts))
                 })
 
+                ion_icon.addEventListener("click", function(){
+                    let isProductAlreadyPresent = false;
+                    if (wlArr.length > 0) {
+                        wlArr.forEach((item) => {
+                            if (item.id === element.id) {
+                                isProductAlreadyPresent = true;
+                                return; 
+                            }
+                        });
+                    }
+                    if (isProductAlreadyPresent) {
+                        alert("Product is already present in your wishlist.");
+                    } else {
+                        wlArr.push(element);
+                        localStorage.setItem("cart-wish-db", JSON.stringify(wlArr));
+                        alert("Product added to your wishlist.");
+                    }
+                })
 
                 cardBtn.addEventListener("click", function () {
                     let isProductAlreadyPresent = false;
