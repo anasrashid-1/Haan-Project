@@ -345,11 +345,33 @@ const displayData = (data) => {
                 });
             }
             if (isProductAlreadyPresent) {
-                alert("Product is already present in your wishlist.");
+                // alert("Product is already present in your wishlist.");
+                Swal.fire({
+                    title: 'Product is already present in your wishlist.',
+                    confirmButtonColor: 'black',
+                    showClass: {
+                      popup: 'animate_animated animate_fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate_animated animate_fadeOutUp'
+                    }
+                  })
+
+
             } else {
                 wlArr.push(element);
                 localStorage.setItem("cart-wish-db", JSON.stringify(wlArr));
-                alert("Product added to your wishlist.");
+                // alert("Product added to your wishlist.");
+                Swal.fire({
+                    title: 'Product added to your wishlist.',
+                    confirmButtonColor: 'black',
+                    showClass: {
+                      popup: 'animate_animated animate_fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate_animated animate_fadeOutUp'
+                    }
+                  })
             }
         })
 
@@ -365,11 +387,31 @@ const displayData = (data) => {
                 });
             }
             if (isProductAlreadyPresent) {
-                alert("Product is already present in the cart.");
+                // alert("Product is already present in the cart.");
+                Swal.fire({
+                    title: 'Product is already present in the cart.',
+                    confirmButtonColor: 'black',
+                    showClass: {
+                      popup: 'animate_animated animate_fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate_animated animate_fadeOutUp'
+                    }
+                  })
             } else {
                 lsArr.push(element);
                 localStorage.setItem("cartItems", JSON.stringify(lsArr));
-                alert("Product added to cart successfully.");
+                // alert("Product added to cart successfully.");
+                Swal.fire({
+                    title: 'Product added to cart successfully.',
+                    confirmButtonColor: 'black',
+                    showClass: {
+                      popup: 'animate_animated animate_fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate_animated animate_fadeOutUp'
+                    }
+                  })
             }
         });
         cardBtn.style.cursor = "pointer";
