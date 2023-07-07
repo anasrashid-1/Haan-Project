@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="product.css">
+    <!-- for alert -->
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+</head>
+
+<body>
+    <div id="ans-product-page-conatiner">
+        <!-- image and slogan -->
+        <div id="ans-img-sl">
+            <div id="ans-m-img">
+                <img src="https://www.alancrew.com/wp-content/uploads/2019/05/Haan-by-Alancrew2-1.jpg" alt="">
+            </div>
+            <div id="ans-sl">
+                <h4 >Lift Up your Journeys: Natural essentials for your daily adventures</h4>
+            </div>
+        </div>
+
+        <!-- sorting and filtering container -->
+        <div id="ans-sort-filter-main">
+            <div id="ans-sort-filter-cont">
+                <div id="ans-filter" class="text-icon-cont">
+                    <h2 style="cursor: pointer;" id="ans-filter-text" >Filter </h5>
+                    <ion-icon name="filter-outline"  class="ion-icon"></ion-icon>
+                </div>
+                <div id="ans-sort" class="text-icon-cont">
+                    <h2 style="cursor: pointer;" id="ans-sort-text">Sort by</h5>
+                        <ion-icon class="ion-icon" name="funnel-outline"></ion-icon>
+                </div>
+            </div>
+            <hr>
+
+
+            <!-- filter hide part -->
+            <div id="ans-filter-div">
+                <div id="ans-filter-div-content">
+                    <div class="ans-filter-div-category">
+                        <p>Category</p>
+                        <input type="checkbox" value="handsanitizer" id="c-handsanitizer">
+                        <label for="c-handsanitizer">Hand Sanitizer</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" value="case" id="c-case">
+                        <label for="c-case">Case</label>
+                        <br>
+                        <br>
+                        <input type="checkbox" value="combo" id="p-combo">
+                        <label for="p-combo">Combo</label>
+
+                    </div>
+             
+                    <!-- <div class="ans-sort-div-fragrance">
+                        <p>Fragrance</p>
+                       
+                        <input type="checkbox" value="woodnight" id="woodnight">
+                        <label for="woodnight">Wood Night</label>
+                        <br>
+                        <br>
+
+                       
+                        <input type="checkbox" value="brightrose" id="brightrose">
+                        <label for="brightrose">Bright Rose</label>
+                        <br>
+                        <br>
+
+                       
+                        <input type="checkbox" value="citrusnoon" id="citrusnoon">
+                        <label for="citrusnoon">Citrus Noon</label>
+                        <br>
+                        <br>
+                    </div> -->
+                    
+                    <div class="ans-sort-div-price">
+                        <p>Price</p>
+                        <input style="height: 30px;" type="number" id="product-price" placeholder="Enter Minimum Price">
+                    </div>
+                </div>
+                <br>
+                    <br>
+                <div id="ans-filter-div-btn">
+                    <button id="ans-filter-btn" class="ans-btn">Apply</button>
+                </div>
+                <br>
+                <hr>
+            </div>
+
+            <!-- sort hide part -->
+
+            <div id="ans-sort-div">
+                <div id="ans-sort-div-content">
+                    <div id="ans-sort-div-price">
+                        <p>Price</p>
+                        <input type="checkbox" value="ascending" id="p-ascending">
+                        <label id="p-ascending-text" for="p-ascending">Price Ascending</label>
+                        <br>
+                        <br>
+
+                        <input type="checkbox" value="descending" id="p-descending">
+                        <label id="p-descending-text" for="p-ascending">Price Desscending</label>
+                        <br>
+                        <br>
+
+                    </div>
+                    <div id="ans-sort-div-title">
+                        <p>Title</p>
+                        <input type="checkbox" value="a-z" id="a-z">
+                        <label id="a-z-text" for="a-z">A-Z</label>
+                        <br>
+                        <br>
+
+                        <input type="checkbox" value="z-a" id="z-a">
+                        <label id="z-a-text" for="z-a">Z-A</label>
+
+                    </div>
+                </div>
+                <div id="ans-sort-div-btn">
+                    <button id="ans-sort-btn" class="ans-btn">Apply</button>
+                </div>
+                <br>
+                <hr>
+
+            </div>
+
+        </div>
+
+        <!-- products list -->
+        <div id="ans-main-product-container">
+
+            <!-- <div id="loading-img-cont">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" alt="">
+            </div> -->
+
+        </div>
+
+        <hr>
+        <!-- pagination part -->
+        <br>
+        <br>
+        <div id="ans-pagination-btns">
+            <button id="ans-previous-btn" class="ans-btn">Previous</button>
+            <span id="ans-page-num"></span>
+            <button id="ans-next-btn" class="ans-btn">Next </button>
+            <br>
+        </div>
+        <br>
+        <br>
+    </div>
+    
+
+</body>
+<script src="product.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script src="sweetalert2.all.min.js"></script>
+</html>
