@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.material-symbols-outlined {
+    font-size: xx-large;
+  }
 section {
   position: relative;
   width: 100%;
