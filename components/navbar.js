@@ -59,10 +59,6 @@ const navbar = () => {
    <ion-icon name="menu" class="header_toggle" id="toggle-menu" ></ion-icon>
  </header>
 `  ;
-
-
-  
-
 };
 
 
