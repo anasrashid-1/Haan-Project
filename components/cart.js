@@ -51,11 +51,11 @@ const haanCart =()=>{
 
   <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
   
-  <img id="pngImage" style="margin-top: 10px;" src="Assets/gst.png" alt="">
+  <img id="pngImage" style="margin-top: 10px;" src="HAAN-img/gst.png" alt="">
   <div id="bagItems"></div>
   
   <div id="grandTotalParent">
-    <img src="Assets/cards.png" alt="">
+    <img src="HAAN-img/cards.pn" alt="">
     <hr>
     <div id="gandTotal">
       <div>

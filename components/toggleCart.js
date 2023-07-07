@@ -55,7 +55,7 @@ const couponHTML = `
         </svg>
         </svg>
         </div>
-        <input placeholder="Enter Coupon Code" type="text" id="promo">
+        <input placeholder="Enter Coupon Code" type="text" id="promo" style="margin-bottom:50%;">
         <button onclick="check()">Apply</button>
       </div> <br>
     </div>

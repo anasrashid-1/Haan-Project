@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="../Styles/product.css">
     
-  <link rel="stylesheet" href="footer.css">
-  <link rel="stylesheet" href="navbar.css">
-  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="../Styles/footer.css">
+  <link rel="stylesheet" href="../Styles/navbar.css">
+  <link rel="stylesheet" href="../Styles/cart.css">
   
   <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet" />
   
@@ -40,7 +40,7 @@
       <div class="account">
 
 
-        <a href="login.html"> <span class="material-symbols-outlined"> person </span></a>
+        <a href="signin.html"> <span class="material-symbols-outlined"> person </span></a>
 
       </div>
 
@@ -176,11 +176,11 @@
       
         <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
         
-        <img id="pngImage" style="margin-top: 10px;" src="Assets/gst.png" alt="">
+        <img id="pngImage" style="margin-top: 10px;" src="HAAN-img/gst.png" alt="">
         <div id="bagItems"></div>
         
         <div id="grandTotalParent">
-          <img src="Assets/cards.png" alt="">
+          <img src="HAAN-img/cards.pn" alt="">
           <hr>
           <div id="gandTotal">
             <div>
@@ -241,8 +241,10 @@
 
     let lsArr = JSON.parse(localStorage.getItem("cartItems")) || [];
     const displayData = (data) => {
+    
     let pMainContainer = document.getElementById("ans-main-product-container");
     pMainContainer.innerHTML = null;
+
 
     let productsList = document.createElement("div");
     productsList.setAttribute("class", "ans-product-list");

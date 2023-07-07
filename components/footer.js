@@ -2,7 +2,7 @@ const footer =()=>{
     return `  
     <div id="first">
   
-      <div id="first-footer-heading">
+      <div class="first-footer-heading">
          <h1 style="margin-top: 10%;">HAAN</h1> 
           <h1>Subscribe Our Newsletters</h1>
   

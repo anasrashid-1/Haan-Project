@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In Page</title>
     
-    <link rel="stylesheet" href="./signup.css">
-    <script src="./signin.js" type="module"></script>
+    <link rel="stylesheet" href="../Styles/signup.css">
+
+    
+   <link rel="stylesheet" href="sweetalert2.min.css">
+
 </head>
 <body>
 
@@ -76,7 +79,17 @@ form.addEventListener('submit', e => {
     }
   });
   if (found) {
-    alert('Sign in Successful');
+    // alert('Sign in Successful');
+    Swal.fire({
+                    title: 'Sign in Successful',
+                    confirmButtonColor: 'black',
+                    showClass: {
+                      popup: 'animate_animated animate_fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate_animated animate_fadeOutUp'
+                    }
+                  })
     window.location.href = "index.html";
     email.value = '';
     password.value = '';
@@ -133,3 +146,7 @@ const validateInputs = () => {
 };
 
 </script>
+
+<script src="../logics/signin.js" type="module"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
