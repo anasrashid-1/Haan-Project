@@ -27,7 +27,10 @@
     justify-content: space-between;
     margin: 0 30px;
 }
-
+.ans-product-card{
+    border-radius: 12px;
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; 
+}
 
 /* filter hide part */
 #ans-filter-div-content,
@@ -72,9 +75,15 @@
 
 
 /* products */
-.ans-product-list img {
+
+.ans-product-card img{
     width: 100%;
+    transform: scale(1.05);
+    border-radius: 12px;
 }
+.ans-product-card img:hover{
+    transform: scale(1.1);
+ }
     
 #loading-img-cont{
     display: flex;
@@ -86,6 +95,7 @@
     grid-template-columns: 23% 23% 23% 23%;
     justify-content: center;
     align-items: center;
+    gap: 14px;
 }
 
 .ans-product-card {
