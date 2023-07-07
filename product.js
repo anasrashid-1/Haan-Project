@@ -31,12 +31,14 @@ let pageNumber = 1;
 let fetchedData = null;
 const fetchProducts = async (pageNum) => {
     try {
-        let result = await fetch(`http://localhost:3000/products`);
+        // let result = await fetch(`http://localhost:3000/products`);
+        let result = await fetch(`https://witty-shawl-hare.cyclic.app/products`)
         fetchedData = await result.json();
 
-        let res = await fetch(
-            `http://localhost:3000/products?_limit=${pageLimit}&_page=${pageNum}`
-        );
+        // let res = await fetch(
+        //     `http://localhost:3000/products?_limit=${pageLimit}&_page=${pageNum}`
+        // );
+        let res = await fetch(`https://witty-shawl-hare.cyclic.app/products?_limit=${pageLimit}&_page=${pageNum}`)
         let data = await res.json();
         // fetchedData = data;
         console.log(data);
