@@ -4,7 +4,7 @@ Total();
 function showData() {
   let ProductList = document.querySelector("#productList");
   ProductList.innerHTML = "";
-  let items = JSON.parse(localStorage.getItem("cart-product-db")) || [];
+  let items = JSON.parse(localStorage.getItem("cartItems")) || [];
   items.map(function (e) {
     let div = document.createElement("div");
     let div1 = document.createElement("div");
@@ -26,27 +26,30 @@ function showData() {
 function subTotal(Discount){
    let subTotal = document.querySelector("#subTotal"); 
    subTotal.innerText=null;
-   let items = JSON.parse(localStorage.getItem("cart-Item-List")) || [];
+   let items = JSON.parse(localStorage.getItem("cartItems")) || [];
    let sum=0;
    items.map(function(e){
        sum+=e.price;
    })
    let DiscountAmount = sum*Discount;
-   sum= sum-DiscountAmount;
+   document.getElementById("Discount").innerText=DiscountAmount;
+  //  sum= sum-DiscountAmount;
    subTotal.innerText=sum;
 }
 function Total(){
     let subTotal=Number(document.querySelector("#subTotal").innerText);
     let shipping = Number(document.querySelector("#shipping").innerText);
+    let Discount = Number(document.querySelector("#Discount").innerText);
    let Total= document.querySelector("#Total");
    Total.innerText=null;
-    Total.innerText = subTotal+shipping;
-    localStorage.setItem("TotalAmount",subTotal+shipping);
+    Total.innerText = subTotal+shipping-Discount;
+    localStorage.setItem("TotalAmount",subTotal+shipping-Discount);
 }
 localStorage.setItem("Haan10",0.1);
 document.getElementById("DiscountButton").addEventListener("click",Discount);
 function Discount(){
     let coupon = document.getElementById("Coupon").value;
+    
     let discountVal = Number(localStorage.getItem(coupon));
     subTotal(discountVal);
     Total();

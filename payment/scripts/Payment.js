@@ -30,7 +30,7 @@ var options = {
         
       "Payment successful. Transaction ID: " + response.razorpay_payment_id
     );
-    window.location.href = "/thankyou"; // Replace with your thank you page URL
+    window.location.href = "../thankyou.html"; // Replace with your thank you page URL
   },
   prefill: {
     name: name,
