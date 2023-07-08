@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Products</title>
     <link rel="stylesheet" href="./Styles/product.css">
         
   <link rel="stylesheet" href="./Styles/footer.css">
@@ -107,6 +107,9 @@
                     <h2 style="cursor: pointer;" id="ans-filter-text" >Filter </h5>
                     <ion-icon name="filter-outline"  class="ion-icon"></ion-icon>
                 </div>
+                <div id="ans-search-input-cont">
+                    <input id="search-input" type="text" placeholder="Search Product" oninput="debounce()">
+                </div>
                 <div id="ans-sort" class="text-icon-cont">
                     <h2 style="cursor: pointer;" id="ans-sort-text">Sort by</h5>
                         <ion-icon class="ion-icon" name="funnel-outline"></ion-icon>
@@ -120,6 +123,8 @@
                 <div id="ans-filter-div-content">
                     <div class="ans-filter-div-category">
                         <p>Category</p>
+                        <br>
+                  
                         <input type="checkbox" value="handsanitizer" id="c-handsanitizer">
                         <label for="c-handsanitizer">Hand Sanitizer</label>
                         <br>
@@ -156,6 +161,7 @@
                     
                     <div class="ans-sort-div-price">
                         <p>Price</p>
+                        <br>
                         <input style="height: 30px;" type="number" id="product-price" placeholder="Enter Minimum Price">
                     </div>
                 </div>
@@ -174,6 +180,7 @@
                 <div id="ans-sort-div-content">
                     <div id="ans-sort-div-price">
                         <p>Price</p>
+                        <br>
                         <input type="checkbox" value="ascending" id="p-ascending">
                         <label id="p-ascending-text" for="p-ascending">Price Ascending</label>
                         <br>
@@ -187,6 +194,7 @@
                     </div>
                     <div id="ans-sort-div-title">
                         <p>Title</p>
+                        <br>
                         <input type="checkbox" value="a-z" id="a-z">
                         <label id="a-z-text" for="a-z">A-Z</label>
                         <br>

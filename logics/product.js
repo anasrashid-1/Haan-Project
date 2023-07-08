@@ -63,6 +63,38 @@ const fetchProducts = async (pageNum) => {
 };
 fetchProducts(pageNumber);
 
+
+
+// debouncing part
+let id;
+const debounce = () => {
+    if(id){
+        clearTimeout(id);
+    }
+    id = setTimeout( ()=> {
+        debounceFetch()
+    }, 1000)
+}
+
+const debounceFetch = async () => {
+    try {
+        let input = document.getElementById("search-input").value
+        let res = await fetch(`https://witty-shawl-hare.cyclic.app/products?q=${input}`)
+        let data = await res.json();
+        console.log(data)
+        document.getElementById("ans-main-product-container").innerHTML = `
+        <div id="loading-img-cont">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921" alt="">
+        </div>`;
+
+    setTimeout(() => {
+        displayData(data);
+    }, 1000);
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 //filtering part
 
 // category
@@ -291,6 +323,7 @@ const displayData = (data) => {
         let ion_icon = document.createElement("ion-icon")
         ion_icon.setAttribute("name", "heart")
         ion_icon.setAttribute("id", "ion-icon")
+        ion_icon.style.marginBottom = "-12px"
         let cardBtn = document.createElement("button");
         cardBtn.setAttribute("class", "ans-btn");
         

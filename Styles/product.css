@@ -23,8 +23,10 @@
 
 /* ans-sort-filter-main */
 #ans-sort-filter-cont {
+    height: 80px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0 30px;
 }
 
@@ -85,7 +87,18 @@
 #ans-sort-div {
     display: none;
 }
-
+#search-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid teal;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+  }
+  #search-input:focus {
+    border-color: teal;
+    box-shadow: 0 0 5px teal;
+  }
 
 /* products */
 .ans-product-card{
@@ -156,9 +169,12 @@
 #ans-pagination-btns {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 20px;
 }
-
+#ans-pagination-btns span{
+    margin-bottom: -9px;
+}
 
 
 
