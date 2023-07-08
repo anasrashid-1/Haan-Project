@@ -1,24 +1,16 @@
 {
-  "name": "haan-project",
-  "version": "1.0.0",
-  "description": "",
-  "main" : "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+  "dependencies": {
+    "json-server": "^0.17.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anasrashid-1/Haan-Project.git"
+  "name": "payment-page",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/anasrashid-1/Haan-Project/issues"
-  },
-  "homepage": "https://github.com/anasrashid-1/Haan-Project#readme",
-  "dependencies": {
-    "json-server": "^0.17.3"
-  }
+  "description": ""
 }
