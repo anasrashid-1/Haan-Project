@@ -237,7 +237,7 @@
         setTimeout(() => {
             displayData(wishListProducts);
         }, 1000);
-
+     
 
     let lsArr = JSON.parse(localStorage.getItem("cartItems")) || [];
     const displayData = (data) => {
@@ -249,7 +249,9 @@
     let productsList = document.createElement("div");
     productsList.setAttribute("class", "ans-product-list");
 
-    data.forEach((element, index) => {
+      
+ if(data.length !== 0){
+  data.forEach((element, index) => {
         let productCard = document.createElement("div");
         productCard.setAttribute("class", "ans-product-card");
         let productImg = document.createElement("div");
@@ -269,6 +271,7 @@
         let ion_icon = document.createElement("ion-icon")
         ion_icon.setAttribute("name", "trash-outline")
         ion_icon.setAttribute("id", "ion-icon")
+        ion_icon.style.marginBottom = "-12px"
         let cardBtn = document.createElement("button");
         cardBtn.setAttribute("class", "ans-btn");
         
@@ -317,7 +320,7 @@
         ion_icon.addEventListener("click", function(){
             event.target.parentNode.parentNode.parentNode.remove();
             console.log(wishListProducts)
-            wishListProducts.splice(1,1)
+            wishListProducts.splice(index,1)
             localStorage.setItem("cart-wish-db", JSON.stringify(wishListProducts));
             console.log(wishListProducts)
         })
@@ -364,6 +367,13 @@
         cardBtn.style.cursor = "pointer";
     });
     pMainContainer.append(productsList);
+ } else{
+  console.log("empty");
+  pMainContainer.innerHTML = `<div style="display: flex; justify-content: center; width: 100%;">
+      <img src="https://2.bp.blogspot.com/-QfSOClZc8r0/XNr6srFlzjI/AAAAAAAAGlA/lzs505eFFiEdyAytzKkMabdUTihKywcqwCLcBGAs/s1600/EXAM360%2B-%2BNo%2BWishlist.png" alt="Empty!">
+    </div>
+`;
+ }
 };
 
 

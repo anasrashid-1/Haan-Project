@@ -83,6 +83,7 @@
                 let ion_icon = document.createElement("ion-icon")
                 ion_icon.setAttribute("name", "heart")
                 ion_icon.setAttribute("id", "ion-icon")
+                
                 let cardBtn = document.createElement("button");
                 cardBtn.setAttribute("class", "ans-btn");
                 
