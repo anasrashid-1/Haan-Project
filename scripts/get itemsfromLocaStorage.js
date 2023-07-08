@@ -31,8 +31,8 @@ function subTotal(Discount){
    items.map(function(e){
        sum+=e.price;
    })
-   let DiscountAmount = sum*Discount;
-   document.getElementById("Discount").innerText=DiscountAmount;
+   let DiscountAmount = sum*30/100;
+   document.getElementById("Discount").innerText= `${DiscountAmount}`;
   //  sum= sum-DiscountAmount;
    subTotal.innerText=sum;
 }
@@ -43,6 +43,7 @@ function Total(){
    let Total= document.querySelector("#Total");
    Total.innerText=null;
     Total.innerText = subTotal+shipping-Discount;
+    
     localStorage.setItem("TotalAmount",subTotal+shipping-Discount);
 }
 localStorage.setItem("Haan10",0.1);

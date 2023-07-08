@@ -26,11 +26,23 @@ var options = {
   // Order ID generated from the server
   handler: function (response) {
     // Payment successful callback
-    alert(
+    // alert(
         
-      "Payment successful. Transaction ID: " + response.razorpay_payment_id
-    );
-    window.location.href = "../thankyou.html"; // Replace with your thank you page URL
+    //   "Payment successful. Transaction ID: " + response.razorpay_payment_id
+    // );
+
+
+    Swal.fire({
+      title: "Payment successful. Transaction ID: "  + response.razorpay_payment_id,
+      confirmButtonColor: 'black',
+      showClass: {
+        popup: 'animate_animated animate_fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate_animated animate_fadeOutUp'
+      }
+    })
+    window.location.href = "thankyou.html"; // Replace with your thank you page URL
   },
   prefill: {
     name: name,
